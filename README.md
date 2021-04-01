@@ -108,7 +108,7 @@ For the majority of models I created, I applied hyperparameter tuning.
 
 <h5 align="center">Table Comparing Best Models</h5>
 <p align="center">
-  <img src="https://github.com/HardikMochi/Bank/blob/main/Image/model.PNG" width=600 height=300>
+  <img src="https://github.com/HardikMochi/Bank/blob/main/Image/model.PNG" width=500 height=250>
 </p>
 
 from the above table conclude that Gradient Boosting algorithm give the best result. I chose the LightGBM model as my best model because it give best result also
@@ -118,13 +118,16 @@ higher efficiency.
 Lower memory usage.
 
 I have saved all the models using the pickle library's dump function and stored them in the Models folder.
+</details>
+
+## Importance Features
 
 <h5 align="center">Importance Features</h5>
 <p align="center">
-  <img src="https://github.com/HardikMochi/Bank/blob/main/Image/model.PNG" width=600 height=300>
+  <img src="https://github.com/HardikMochi/Bank/blob/main/Image/important feature.PNG">
 </p>
+<b>From the above Feature Importance chart last contact duration,Balance, day of the month, client age ('age'), number of client contacts during the current marketing campaign ('campaign'),and days since prev campaign contact are the imporatant features that drive the decision of the customer to purchase the term deposit or not.</b>
 
-</details>
 
 
 
