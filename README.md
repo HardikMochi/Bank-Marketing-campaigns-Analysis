@@ -40,19 +40,7 @@ Variable '**id**' is Identifier column. It has a unique value for every sample i
 Variable <b>term_deposit_subscribed</b> is Target/y column. It has binary values and we need to learn to predict this variable given our above 16 variables as features.
 </details>
 
-## Hypothesis Generation
-<details>
-<a name="Hypothesis Generation"></a>
-<summary>Show/Hide</summary>
-<br>
-  1. Are younger customers more likely to subscribe to a term deposit as compared to old customers ?
 
- 2. Are people with a higher bank balance more likely subscribe to term deposit than people with low balance ?
-
- 3. Does a married person have higher chances to subscribe to a term deposit compared to a single or divorced person ? 
-
- 4.  Does the length of the call made to the customers tell us anything about their chances of subscribing ?
-</details>
 
 
 ## Exploratory data analysis:
@@ -84,7 +72,7 @@ For each feature type  perform two types of analysis:
 
 2. Bivariate: Analyze the relationship of that feature with target variable, i.e. 'term_deposit_subscribed'
 
-using EDA we can find the answer of the initial hypothesis.
+using EDA we can find the answer of the following Question.
 
 <b>Q. Do married people have more chances of subscribing to a term deposit ?</b>
 <p>
@@ -97,7 +85,46 @@ The data tells us quite a different story than our initial thought process, sing
 <p>
   <img src="https://github.com/HardikMochi/Bank/blob/main/Image/3.PNG" width=600>
 </p>
-If you see the plot above median balance of customers not subscribing to a term deposit is around 400 whereas median balance of customers subscribing to a term deposit is 800. This definitely supports our initial hypothesis.
+If you see the plot above median balance of customers not subscribing to a term deposit is around 400 whereas median balance of customers subscribing to a term deposit is 800. 
+
+**Q. Does the length of the call made to the customers tell us anything about their chances of subscribing ?**
+
+<p align="center">
+  <img src="https://github.com/HardikMochi/Bank/blob/main/Image/4.PNG" width=600 height=300>
+</p>
+
+From the plot above median last_call_duration made to the customers not subscribing to a term deposit is around 150 seconds. Median last_call_duration made to the customers subscribing to a term deposit is around 450 seconds.
 </details>
+
+### Model Devlopment:
+<details open>
+<summary>Show/Hide</summary>
+<br>
+
+I did data split into Train and Validation data . I also chose Stratified 5-fold has a my choice for cross validating.
+
+For the majority of models I created, I applied hyperparameter tuning.
+
+
+<h5 align="center">Table Comparing Best Models</h5>
+<p align="center">
+  <img src="https://github.com/HardikMochi/Bank/blob/main/Image/model.PNG" width=600 height=300>
+</p>
+
+from the above table conclude that Gradient Boosting algorithm give the best result. I chose the LightGBM model as my best model because it give best result also
+
+Faster training speed campare to other Gradient Boosting algorithm
+higher efficiency.
+Lower memory usage.
+
+I have saved all the models using the pickle library's dump function and stored them in the Models folder.
+
+<h5 align="center">Importance Features</h5>
+<p align="center">
+  <img src="https://github.com/HardikMochi/Bank/blob/main/Image/model.PNG" width=600 height=300>
+</p>
+
+</details>
+
 
 
